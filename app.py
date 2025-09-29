@@ -29,7 +29,7 @@ st_slope = st.selectbox("ST Slope", ["Up", "Flat", "Down"])
 
 # Create a button to predict
 if st.button("Predict"):
-    # Prepare the input data as a DataFrame
+    # Prepare the input data as a DataFrame with the correct column order and names
     input_data = pd.DataFrame({
         "Age": [age],
         "Sex": [sex],
@@ -37,6 +37,7 @@ if st.button("Predict"):
         "RestingBP": [resting_bp],
         "Cholesterol": [cholesterol],
         "FastingBS": [fasting_bs],
+        "RestingECG": ["Normal"], # Assuming 'Normal' as a default since it's not in input fields
         "MaxHR": [max_hr],
         "ExerciseAngina": [exercise_angina],
         "Oldpeak": [oldpeak],
